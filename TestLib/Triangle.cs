@@ -31,12 +31,12 @@ namespace TestLib
         {
             double maxEdge = edgeC, a = edgeA, b = edgeB;
 
-            if (maxEdge - a > 0)
+            if (maxEdge - a < 0)
                 Swap(ref maxEdge, ref a);
-            if (maxEdge - b > 0)
+            if (maxEdge - b < 0)
                 Swap(ref maxEdge, ref b);
 
-            return Math.Pow(maxEdge,2) - Math.Pow(a,2) - Math.Pow(b,2) == 0;
+            return Math.Abs(Math.Pow(maxEdge,2) - Math.Pow(a,2) - Math.Pow(b,2)) == 0;
         }
 
         public double Area()
